@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funrec Audio Recorder - Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0ea5a4;
+            --primary-dark: #0c8c8b;
+            --primary-light: #e0f7f6;
+            --light-blue: #e6f7ff;
+            --light-blue-dark: #b3e0ff;
+            --surface: #ffffff;
+            --background: #f8fafc;
+            --on-surface: #1e293b;
+            --on-surface-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+            --radius: 20px;
+            --radius-small: 12px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--on-surface);
+            line-height: 1.7;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header-card {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-blue-dark) 100%);
+            border-radius: var(--radius);
+            padding: 60px 40px;
+            color: var(--on-surface);
+            margin: 0 auto 40px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.3)"/></svg>');
+            background-size: cover;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(129, 142, 234, 1);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 8px 25px rgba(129, 142, 234, 0.4);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(129, 142, 234, 0.5);
+        }
+
+        .app-icon svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .header-card h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary);
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-card p {
+            opacity: 0.9;
+            font-size: 18px;
+            color: var(--on-surface);
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .content-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--on-surface);
+        }
+
+        .section p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--on-surface);
+        }
+
+        .section ul {
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: var(--on-surface);
+            position: relative;
+        }
+
+        .section li::marker {
+            color: var(--primary);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+            background: var(--primary-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .permission-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--primary-light);
+            border-radius: var(--radius-small);
+            transition: transform 0.2s ease;
+        }
+
+        .permission-item:hover {
+            transform: translateX(5px);
+        }
+
+        .permission-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .permission-text {
+            flex: 1;
+        }
+
+        .permission-text strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--on-surface);
+            font-size: 16px;
+        }
+
+        .permission-text p {
+            font-size: 14px;
+            color: var(--on-surface-muted);
+            margin: 0;
+        }
+
+        .note-box {
+            background: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 20px;
+            border-radius: 0 var(--radius-small) var(--radius-small) 0;
+            margin: 20px 0;
+        }
+
+        .note-box p {
+            font-size: 14px;
+            color: #5d4037;
+            margin: 0;
+        }
+
+        .contact-card {
+            background: var(--primary-light);
+            border-radius: var(--radius-small);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--on-surface);
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 40px;
+        }
+
+        .quick-nav {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .quick-nav h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quick-nav h3::before {
+            content: '📋';
+            font-size: 20px;
+        }
+
+        .quick-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .quick-nav li {
+            margin-bottom: 12px;
+        }
+
+        .quick-nav a {
+            display: block;
+            padding: 12px 16px;
+            background: var(--primary-light);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: var(--radius-small);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .quick-nav a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(5px);
+            border-left-color: var(--primary-dark);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--on-surface-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .footer strong {
+            color: var(--primary);
+        }
+
+        .footer p {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .quick-nav {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px;
+            }
+            
+            .header-card {
+                padding: 40px 24px;
+            }
+            
+            .header-card h1 {
+                font-size: 32px;
+            }
+            
+            .content-card {
+                padding: 30px 24px;
+            }
+            
+            .app-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .app-icon svg {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-card {
+                padding: 30px 20px;
+            }
+            
+            .header-card h1 {
+                font-size: 28px;
+            }
+            
+            .content-card {
+                padding: 24px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 20px;
+            }
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 40px;
+        }
+
+        /* Selection color */
+        ::selection {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <div class="header-card">
+                <div class="app-icon">
+                    <svg width="50" height="50" viewBox="0 0 256 256" fill="#ffffff">
+                    <path d="M164.21,16.55C176.56,27.3 185.94,40.57 187.17,57.37C187.48,64.3 187.45,71.24 187.43,78.18C187.44,80.43 187.44,82.69 187.45,84.94C187.46,89.66 187.46,94.37 187.45,99.09C187.43,105.09 187.45,111.1 187.48,117.1C187.5,121.76 187.5,126.41 187.5,131.07C187.5,133.28 187.5,135.49 187.51,137.71C187.62,158.65 185.16,176.01 170.16,191.97C156.34,204.96 140.81,208.65 122.44,208.31C108.84,207.75 96.08,201.68 86.2,192.39C74.39,179.54 68.68,165.1 68.73,147.71C68.72,146.73 68.72,145.74 68.71,144.72C68.7,141.49 68.7,138.25 68.7,135.01C68.7,132.74 68.69,130.48 68.69,128.21C68.68,123.46 68.68,118.72 68.68,113.97C68.69,107.92 68.67,101.86 68.65,95.81C68.64,91.13 68.63,86.44 68.64,81.76C68.64,79.53 68.63,77.3 68.62,75.07C68.54,54 70.87,37.24 86.28,21.63C106.8,1.81 141.38,-2.3 164.21,16.55ZM91.59,33.06C75.56,52.56 80,76.69 80,101C111.68,101 143.36,101 176,101C178.11,61.59 178.11,61.59 160.9,29.84C150.01,19.56 138.15,16.36 123.52,16.69C110.76,17.33 100.23,23.93 91.59,33.06ZM80,112C77.79,150.41 77.79,150.41 94.07,183.26C104.45,192.6 116.23,197.4 130.23,197.21C143.37,196.2 155.1,190.71 164,181C180.01,160.15 176,138.49 176,112C144.32,112 112.64,112 80,112Z"/>
+                    <path d="M53.5,143.75C57,144 57,144 59,146C59.42,147.95 59.42,147.95 59.68,150.33C59.78,151.21 59.88,152.08 59.99,152.98C60.09,153.92 60.2,154.85 60.31,155.81C62.64,173.67 69.94,190.82 84.58,202.23C101.01,214.11 118.95,219.4 139.17,216.71C156.38,213.72 172.67,204.24 183,190C191.02,177.87 194.98,165.65 196.32,151.15C196.8,146.2 196.8,146.2 199,144C202.5,143.75 202.5,143.75 206,144C208.9,146.9 208.34,149.07 208.38,153.13C208.26,174.19 198.94,192.44 184.59,207.53C168.33,222.95 146.87,230.87 124.57,230.29C101.14,228.41 80.65,218.67 65.16,200.75C57.99,191.62 53.35,182.09 50,171C49.75,170.23 49.51,169.47 49.25,168.68C47.88,163.69 47.8,158.7 47.75,153.56C47.74,152.85 47.73,152.14 47.72,151.41C47.75,146.2 47.83,144.15 53.5,143.75Z"/>
+                    <path d="M33.13,58.06C36,59 36,59 38,62C38.2,64.85 38.28,67.6 38.27,70.45C38.28,71.31 38.28,72.17 38.29,73.06C38.3,75.91 38.3,78.77 38.3,81.62C38.3,83.6 38.31,85.58 38.31,87.57C38.32,91.72 38.32,95.88 38.32,100.03C38.31,105.36 38.33,110.69 38.35,116.01C38.36,120.11 38.37,124.2 38.36,128.29C38.36,130.26 38.37,132.22 38.38,134.19C38.39,136.93 38.38,139.68 38.37,142.42C38.38,143.24 38.39,144.05 38.4,144.89C38.36,148.17 38.22,150.58 36.66,153.51C35,155 35,155 32,155.44C28.68,154.95 28.01,154.57 26,152C25.7,149.08 25.58,146.38 25.6,143.46C25.59,142.59 25.58,141.72 25.58,140.82C25.56,137.93 25.56,135.05 25.57,132.16C25.56,130.16 25.56,128.15 25.55,126.15C25.54,121.95 25.54,117.74 25.55,113.54C25.57,108.15 25.55,102.77 25.52,97.38C25.5,93.24 25.5,89.1 25.5,84.96C25.5,82.97 25.5,80.99 25.49,79C25.47,76.22 25.48,73.45 25.5,70.67C25.49,69.85 25.48,69.02 25.47,68.18C25.52,64.57 25.7,62.42 27.84,59.45C30,58 30,58 33.13,58.06Z"/>
+                    <path d="M98.69,239.84C99.74,239.83 99.74,239.83 100.81,239.82C103.13,239.81 105.45,239.8 107.78,239.8C109.39,239.79 110.99,239.79 112.6,239.78C115.98,239.77 119.35,239.76 122.73,239.76C127.06,239.75 131.39,239.73 135.72,239.7C139.05,239.68 142.37,239.68 145.69,239.68C147.29,239.67 148.89,239.67 150.49,239.65C152.72,239.64 154.95,239.64 157.18,239.64C158.45,239.64 159.72,239.64 161.03,239.63C162.01,239.75 162.99,239.88 164,240C166,243 166,243 165.75,246.06C165,249 165,249 163,251C160.12,251.26 160.12,251.26 156.39,251.27C155.72,251.28 155.04,251.28 154.34,251.29C152.09,251.3 149.85,251.3 147.6,251.3C146.04,251.3 144.48,251.31 142.92,251.31C139.65,251.32 136.38,251.32 133.11,251.32C128.91,251.31 124.72,251.33 120.52,251.35C117.3,251.36 114.08,251.37 110.86,251.36C109.31,251.36 107.77,251.37 106.22,251.38C104.06,251.39 101.9,251.38 99.73,251.37C97.89,251.37 97.89,251.37 96,251.37C93,251 93,251 91.06,249.7C89.26,246.81 90.29,244.18 91,241C92.89,239.11 96.18,239.85 98.69,239.84Z"/>
+                    <path d="M227,101C229.14,102.59 229.91,103.48 230.38,106.12C230.38,106.93 230.39,107.75 230.39,108.59C230.4,109.98 230.4,109.98 230.42,111.4C230.41,112.4 230.4,113.4 230.4,114.43C230.4,115.98 230.4,115.98 230.41,117.55C230.41,119.73 230.4,121.91 230.39,124.09C230.38,127.42 230.39,130.75 230.41,134.09C230.41,136.2 230.4,138.32 230.4,140.43C230.41,141.93 230.41,141.93 230.42,143.46C230.41,144.39 230.4,145.32 230.39,146.28C230.39,147.1 230.38,147.91 230.38,148.75C229.9,151.57 228.97,152.95 227,155C223.87,155.46 221.94,155.7 219.34,153.77C217.61,151.48 217.62,150.15 217.61,147.3C217.6,146.35 217.59,145.4 217.58,144.42C217.59,143.39 217.6,142.37 217.6,141.31C217.6,140.26 217.6,139.2 217.59,138.12C217.59,135.89 217.6,133.66 217.61,131.43C217.62,128.01 217.61,124.6 217.59,121.18C217.59,119.02 217.6,116.85 217.6,114.69C217.6,113.66 217.59,112.64 217.58,111.58C217.6,110.15 217.6,110.15 217.61,108.7C217.61,107.86 217.62,107.03 217.62,106.16C218.56,100.84 222.18,100.4 227,101Z"/>
+                    <path d="M202.5,79.75C206,80 206,80 208,82C208.26,84.13 208.26,84.13 208.27,86.79C208.28,87.78 208.29,88.77 208.3,89.8C208.3,90.88 208.3,91.95 208.3,93.06C208.31,94.16 208.31,95.27 208.31,96.4C208.32,98.74 208.32,101.07 208.32,103.4C208.31,106.99 208.34,110.57 208.36,114.15C208.36,116.41 208.36,118.67 208.36,120.94C208.37,122.01 208.38,123.09 208.39,124.2C208.38,125.2 208.38,126.19 208.37,127.21C208.37,128.09 208.37,128.97 208.37,129.87C208.19,130.93 208.19,130.93 208,132C205,134 205,134 201.94,133.75C199,133 199,133 197,131C196.75,128.91 196.75,128.91 196.74,126.31C196.73,125.33 196.73,124.36 196.72,123.35C196.73,122.3 196.73,121.24 196.73,120.16C196.73,119.08 196.73,118 196.73,116.88C196.73,114.6 196.73,112.31 196.74,110.02C196.75,106.51 196.74,103.01 196.73,99.5C196.73,97.28 196.73,95.06 196.73,92.84C196.73,91.79 196.73,90.73 196.72,89.65C196.73,88.67 196.73,87.7 196.74,86.69C196.74,85.83 196.74,84.97 196.75,84.09C197.22,80.19 198.8,80.01 202.5,79.75Z"/>
+                    <path d="M53.5,79.75C57,80 57,80 59,82C59.27,84.08 59.27,84.08 59.29,86.68C59.31,88.13 59.31,88.13 59.33,89.62C59.33,90.67 59.33,91.72 59.34,92.81C59.34,93.89 59.35,94.96 59.36,96.07C59.37,98.36 59.37,100.64 59.37,102.92C59.37,106.42 59.41,109.92 59.45,113.42C59.46,115.63 59.46,117.84 59.46,120.06C59.48,121.11 59.49,122.16 59.5,123.24C59.5,124.21 59.49,125.19 59.49,126.19C59.49,127.05 59.49,127.91 59.49,128.79C59,131 59,131 57.17,132.82C54.14,134.47 52.26,133.87 49,133C47.38,131.38 47.86,129.57 47.85,127.33C47.85,126.33 47.84,125.34 47.84,124.31C47.83,123.23 47.83,122.15 47.83,121.04C47.83,119.93 47.83,118.83 47.82,117.69C47.82,115.35 47.81,113.01 47.81,110.67C47.81,107.08 47.79,103.49 47.78,99.9C47.77,97.63 47.77,95.37 47.77,93.1C47.76,92.02 47.76,90.94 47.75,89.82C47.75,88.83 47.75,87.83 47.76,86.8C47.76,85.92 47.75,85.04 47.75,84.13C48.21,80.21 49.77,80.02 53.5,79.75Z"/>
+                    <path d="M225.13,58.06C228,59 228,59 230,62C230.44,66.13 230.32,70.28 230.31,74.44C230.33,75.58 230.34,76.73 230.36,77.91C230.36,79.56 230.36,79.56 230.36,81.25C230.37,82.76 230.37,82.76 230.37,84.3C229.94,87.41 229.21,88.79 227,91C223.9,91.45 221.96,91.67 219.34,89.84C216.41,85.82 217.53,79.83 217.56,75.06C217.54,73.87 217.52,72.68 217.5,71.45C217.5,70.3 217.5,69.15 217.5,67.97C217.5,66.92 217.5,65.87 217.5,64.79C218.33,60.16 220.39,57.97 225.13,58.06Z"/>
+                    <path d="M11.63,90.25C15,91 15,91 16,92C16.22,96.12 16.19,100.23 16.19,104.36C16.19,106.43 16.21,108.49 16.22,110.56C16.23,112.51 16.23,112.51 16.23,114.5C16.23,115.69 16.24,116.89 16.24,118.13C16,121 16,121 14,123C8.81,123.55 8.81,123.55 6.33,121.86C4.42,119.19 4.61,117.17 4.6,113.91C4.6,112.71 4.59,111.52 4.59,110.29C4.6,109.04 4.61,107.79 4.63,106.5C4.61,105.25 4.6,104 4.59,102.71C4.59,101.52 4.6,100.32 4.6,99.09C4.6,98 4.61,96.9 4.61,95.77C5,93 5,93 6.3,91.1C8,90 8,90 11.63,90.25Z"/>
+                    <path d="M246.06,90.25C249,91 249,91 251,93C251.46,97.46 251.32,101.95 251.31,106.44C251.33,107.69 251.34,108.94 251.36,110.24C251.36,111.44 251.36,112.64 251.36,113.87C251.37,115.53 251.37,115.53 251.37,117.21C251,120 251,120 249.67,121.86C247.1,123.61 245.01,123.32 242,123C238.63,119.63 239.7,115.19 239.68,110.61C239.68,109.6 239.68,109.6 239.68,108.57C239.69,106.51 239.66,104.45 239.64,102.39C239.64,101.09 239.64,99.8 239.64,98.47C239.63,97.28 239.63,96.09 239.63,94.86C239.75,93.91 239.87,92.97 240,92C243,90 243,90 246.06,90.25Z"/>
+                </svg>
+                </div>
+                <h1>Funrec Audio Recorder</h1>
+                <p>Privacy Policy & Data Protection</p>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="section" id="info-collected">
+                    <div class="section-title">
+                        <div class="section-number">1</div>
+                        <h2>Information We Collect</h2>
+                    </div>
+                    <p>Welcome to <span class="highlight">Funrec Audio Recorder App</span>. This Privacy Policy explains what information the app accesses, how it is used, and the choices you have.</p>
+                    <p>The app is designed to be simple and private. It collects <span class="highlight">no personal information</span> by default. However, it requires the following permissions to function:</p>
+                    
+                    <div class="permission-item">
+                        <div class="permission-icon">🎤</div>
+                        <div class="permission-text">
+                            <strong>Microphone Access</strong>
+                            <p>Required to record audio when you start a recording session. Audio is processed locally and never transmitted externally.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="permission-item">
+                        <div class="permission-icon">🔔</div>
+                        <div class="permission-text">
+                            <strong>Foreground Service</strong>
+                            <p>Shows a notification while recording in the background so you're always aware when recording is active and can easily stop it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" id="info-use">
+                    <div class="section-title">
+                        <div class="section-number">2</div>
+                        <h2>How We Use Information</h2>
+                    </div>
+                    <p>We do not collect or share any personal data. The permissions are used only to:</p>
+                    <ul>
+                        <li>Capture audio from your microphone when you start a recording</li>
+                        <li>Show a persistent notification while recording in the background for transparency and control</li>
+                        <li>Save recordings <span class="highlight">only inside the app's private file directory</span> (internal storage)</li>
+                        <li>Allow you to manage, playback, and export your recordings at your discretion</li>
+                    </ul>
+                    <p>Recordings are not stored in public device storage or shared automatically. All audio processing happens locally on your device.</p>
+                </div>
+
+                <div class="section" id="sharing">
+                    <div class="section-title">
+                        <div class="section-number">3</div>
+                        <h2>Sharing & Third-Party Services</h2>
+                    </div>
+                    <p>The app does not share your recordings or personal data with any third parties. It does not include ads, third-party trackers, analytics, or any external data transmission.</p>
+                    
+                    <div class="note-box">
+                        <p><strong>Note:</strong> If you manually share a recording through your device's share options, the chosen destination app/service will receive the file — this is beyond our control and subject to that service's privacy policy.</p>
+                    </div>
+                </div>
+
+                <div class="section" id="security">
+                    <div class="section-title">
+                        <div class="section-number">4</div>
+                        <h2>Data Security</h2>
+                    </div>
+                    <p>Your recordings remain private in the app's internal storage directory. They are not accessible by other apps unless you explicitly choose to share them.</p>
+                    <p>If you uninstall the app, your saved recordings may also be deleted unless you have exported them manually to external storage.</p>
+                </div>
+
+                <div class="section" id="children">
+                    <div class="section-title">
+                        <div class="section-number">5</div>
+                        <h2>Children's Privacy</h2>
+                    </div>
+                    <p>The app is for general audiences and does not knowingly collect information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us immediately so we can take appropriate action.</p>
+                </div>
+
+                <div class="section" id="changes">
+                    <div class="section-title">
+                        <div class="section-number">6</div>
+                        <h2>Changes to this Policy</h2>
+                    </div>
+                    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The "Last Updated" date at the bottom of this page will always reflect the latest version.</p>
+                    <p>We encourage you to review this policy periodically to stay informed about how we protect your information.</p>
+                </div>
+
+                <div class="section" id="contact">
+                    <div class="section-title">
+                        <div class="section-number">7</div>
+                        <h2>Contact Us</h2>
+                    </div>
+                    <p>If you have any questions, concerns, or suggestions about this Privacy Policy or our privacy practices, please don't hesitate to reach out to us:</p>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-info">
+                            <strong>Email Support</strong>
+                            <a href="mailto:mbilal10388@gmail.com">mbilal10388@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="quick-nav">
+                    <h3>Quick Navigation</h3>
+                    <ul>
+                        <li><a href="#info-collected">Information Collected</a></li>
+                        <li><a href="#info-use">How We Use Data</a></li>
+                        <li><a href="#sharing">Sharing Policy</a></li>
+                        <li><a href="#security">Data Security</a></li>
+                        <li><a href="#children">Children's Privacy</a></li>
+                        <li><a href="#changes">Policy Changes</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Funrec Audio Recorder App — Built with care for your privacy</p>
+            <p>Last updated: <strong>28-09-2025</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add subtle animation to cards when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe content cards for animation
+            const contentCards = document.querySelectorAll('.content-card');
+            contentCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add active state to navigation
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.quick-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                        link.style.background = 'var(--primary)';
+                        link.style.color = 'white';
+                    } else {
+                        link.style.background = 'var(--primary-light)';
+                        link.style.color = 'var(--primary)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
